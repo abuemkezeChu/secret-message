@@ -36,3 +36,30 @@ const encodeMessage = (rectangle, cols) => {
   }
   return encodeChunk
 }
+
+// main function
+const displayMessage = () => {
+  message = message.value
+  let normalizedText = message.replace(/[^a-zA-Z0-9]/g, '').toLowerCase()
+  const messageLength = normalizedText.length
+  // check if characters are up to 50
+  if (messageLength < 50) {
+    input.innerHTML = ''
+    // display error message
+    alert('Please enter a message with at least 50 characters')
+    return
+  }
+  const cols = Math.ceil(Math.sqrt(messageLength))
+  const rows = Math.ceil(messageLength / cols)
+  const rectangle = chunkMessage(cols, rows, normalizedText)
+  let encodedChunks = encodeMessage(rectangle, cols)
+  let output = ''
+  encodedChunks.forEach(chunk => {
+    output += chunk.trim()
+  })
+  input.innerHTML = normalizedText
+  displayChunks.innerHTML = encodedChunks.join('<br>')
+  encodedMsg.innerHTML = output
+}
+
+encodeBtn.addEventListener('click', displayMessage)
