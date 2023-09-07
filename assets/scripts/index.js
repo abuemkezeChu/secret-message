@@ -23,3 +23,16 @@ const chunkMessage = (cols, rows, str) => {
   }
   return chunks
 }
+
+// encode the chunked message
+const encodeMessage = (rectangle, cols) => {
+  let encodeChunk = []
+  for (let i = 0; i < cols; i++) {
+    let text = ''
+    rectangle.forEach(element => {
+      text += element.substring(i, i + 1)
+    })
+    encodeChunk.push(text)
+  }
+  return encodeChunk
+}
