@@ -1,9 +1,9 @@
 'use strict'
 let message = document.getElementById('message')
 const encodeBtn = document.querySelector('.button')
-let input = document.getElementById('normalized-text')
-let displayChunks = document.getElementById('encoded-chunks')
-let encodedMsg = document.getElementById('encoded-message')
+const input = document.getElementById('normalized-text')
+const displayChunks = document.getElementById('encoded-chunks')
+const encodedMsg = document.getElementById('encoded-message')
 
 // split message into chunks
 const chunkMessage = (cols, rows, str) => {
@@ -26,7 +26,7 @@ const chunkMessage = (cols, rows, str) => {
 
 // encode the chunked message
 const encodeMessage = (rectangle, cols) => {
-  let encodeChunk = []
+  const encodeChunk = []
   for (let i = 0; i < cols; i++) {
     let text = ''
     rectangle.forEach(element => {
@@ -40,7 +40,7 @@ const encodeMessage = (rectangle, cols) => {
 // main function
 const displayMessage = () => {
   message = message.value
-  let normalizedText = message.replace(/[^a-zA-Z0-9]/g, '').toLowerCase()
+  const normalizedText = message.replace(/[^a-zA-Z0-9]/g, '').toLowerCase()
   const messageLength = normalizedText.length
   // check if characters are up to 50
   if (messageLength < 50) {
@@ -52,7 +52,7 @@ const displayMessage = () => {
   const cols = Math.ceil(Math.sqrt(messageLength))
   const rows = Math.ceil(messageLength / cols)
   const rectangle = chunkMessage(cols, rows, normalizedText)
-  let encodedChunks = encodeMessage(rectangle, cols)
+  const encodedChunks = encodeMessage(rectangle, cols)
   let output = ''
   encodedChunks.forEach(chunk => {
     output += chunk.trim()
