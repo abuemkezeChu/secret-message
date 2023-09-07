@@ -22,6 +22,10 @@ h6 {
   margin-bottom: 1rem;
 }
 
+p {
+  word-wrap: break-word;
+}
+
 form {
   display: flex;
   flex-direction: column;
