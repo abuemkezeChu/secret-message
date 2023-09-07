@@ -5,10 +5,35 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="assets/styles/index.css" />
-  <title>Secret Message Encoder</title>
+  <title>Secret Message</title>
 </head>
 
 <body>
+  <div class="container">
+    <h1 class="title">Secret Message</h1>
+    <form>
+      <input type="text" placeholder="Type your secret message" id="message">
+      <p id="alert"></p>
+      <button type="button" class="button">Encode message</button>
+    </form>
+    <div class="normalize-box">
+      <h3>Normalized Text</h3>
+      <hr>
+      <p id="normalized-text"></p>
+    </div>
+
+    <div class="chunk-box">
+      <h3>Encoded Chunks</h3>
+      <hr>
+      <p id="encoded-chunks"></p>
+    </div>
+
+    <div class="message-box">
+      <h3>Encoded Message</h3>
+      <hr>
+      <p id="encoded-message"></p>
+    </div>
+  </div>
   <script src="assets/scripts/index.js"></script>
 </body>
 

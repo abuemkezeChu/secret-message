@@ -3,3 +3,75 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #333;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  background-color: #ccc;
+}
+
+input {
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #333;
+  border-radius: 0.25rem;
+}
+
+hr {
+  margin: 1rem 0;
+  border: 0;
+  border-top: 1px solid #333;
+}
+
+.button {
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #333;
+  border-radius: 0.25rem;
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  background-color: #ccc;
+  gap: 2rem;
+}
+
+.container > * {
+  width: 100%;
+  padding: 0 1rem;
+}
+
+#normalized-text,
+#encoded-chunks,
+#encoded-message {
+  border: 1px solid #000;
+  padding: 1rem;
+}
